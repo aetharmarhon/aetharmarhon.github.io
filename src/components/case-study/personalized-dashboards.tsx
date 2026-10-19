@@ -3,6 +3,7 @@ import { CircleHelp, Lightbulb, Search, SlidersHorizontal, Activity, RefreshCw }
 import { ExpandableImage } from "@/components/case-study/expandable-image";
 import { ViewportVideo } from "@/components/case-study/viewport-video";
 import { ContentsNav } from "@/components/case-study/contents-nav";
+import { BackToTop } from "@/components/case-study/back-to-top";
 import { dashboardDetails, dashboardImages as images } from "@/data/personalized-dashboards";
 import "./case-study.css";
 
@@ -15,7 +16,7 @@ const themes = [
 
 export function PersonalizedDashboards() {
   return (
-    <div className="case-layout">
+    <div className="case-layout" id="case-top" tabIndex={-1}>
       <article className="case-article">
         <section id="overview" className="case-overview" aria-labelledby="case-title">
           <Link href="/" className="case-back">Back</Link>
@@ -92,7 +93,14 @@ export function PersonalizedDashboards() {
             <h2 id="details-title">The Details</h2>
             <p>Beyond the overall dashboard layout, a big part of the design work involved thinking through the smaller interactions.</p>
             <p>We wanted users to have flexibility in how they worked with their data, without making the experience unnecessarily complicated.</p>
-            <div className="case-detail-list">{dashboardDetails.map(({ title, paragraphs }, index) => <div key={title} className="case-detail"><h3><span>0{index + 1}</span> {title}</h3>{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<figure><ExpandableImage image={images.pinning} label={title.toLowerCase()} /><figcaption>Pinning flow, from data query to saved dashboard widget.</figcaption></figure></div>)}</div>
+            <div className="case-detail-list">
+              {dashboardDetails.map(({ title, paragraphs }, index) => (
+                <div key={title} className="case-detail">
+                  <h3><span>0{index + 1}</span> {title}</h3>
+                  {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </div>
+              ))}
+            </div>
           </section>
 
           <section id="final-experience" className="case-section" aria-labelledby="final-title">
@@ -114,6 +122,7 @@ export function PersonalizedDashboards() {
         </div>
       </article>
       <ContentsNav />
+      <BackToTop />
     </div>
   );
 }

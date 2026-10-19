@@ -307,8 +307,8 @@ body {
 
 .project-card[data-pointer="true"] { cursor: none; }
 .project-card[data-pointer="true"] .project-cursor { opacity: 1; }
-.project-card[data-pointer="true"] .project-card-content { opacity: 0.88; }
-.project-card[data-pointer="true"] .project-card-image { transform: translateY(-6px); }
+.project-card:where(:not([data-coming-soon]))[data-pointer="true"] .project-card-content { opacity: 0.88; }
+.project-card:where(:not([data-coming-soon]))[data-pointer="true"] .project-card-image { transform: translateY(-6px); }
 
 .project-card:focus-visible .project-card-content { opacity: 0.88; }
 .project-card:focus-visible .project-card-image { transform: translateY(-6px); }

@@ -2,6 +2,7 @@ export type FeaturedProject = {
   slug: string;
   hoverLabel?: string;
   hideHoverArrow?: boolean;
+  comingSoon?: boolean;
   title: string;
   summary: string;
   image: { src: string; alt: string; width: number; height: number };
@@ -21,6 +22,7 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     slug: "quest-reimagined",
+    comingSoon: true,
     hoverLabel: "Coming soon!",
     hideHoverArrow: true,
     title: "Quest Reimagined",
