@@ -5,7 +5,7 @@ export type FeaturedProject = {
   comingSoon?: boolean;
   title: string;
   summary: string;
-  image: { src: string; alt: string; width: number; height: number };
+  image: { src: string; alt: string; width: number; height: number; unoptimized?: boolean };
 };
 
 export const featuredProjects: FeaturedProject[] = [
@@ -14,10 +14,11 @@ export const featuredProjects: FeaturedProject[] = [
     title: "Personalized Dashboards",
     summary: "Designed an AI-powered analytics experience for WSIB that turns natural-language questions into transparent data insights and customizable dashboards.",
     image: {
-      src: "/images/personalized-dashboards-card.png",
+      src: "/images/case-studies/personalized-dashboards/dashboardsthumbnail.png",
       alt: "WSIB analytics dashboard showing claims, account registration data, and a trend chart.",
-      width: 953,
-      height: 689,
+      width: 4130,
+      height: 3026,
+      unoptimized: true,
     },
   },
   {

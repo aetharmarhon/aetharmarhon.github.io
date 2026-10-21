@@ -47,6 +47,7 @@ export function ProjectCard({ project }: { project: FeaturedProject }) {
             alt={project.image.alt}
             width={project.image.width}
             height={project.image.height}
+            unoptimized={project.image.unoptimized}
             quality={90}
             sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1706px) 42vw, 708px"
           />

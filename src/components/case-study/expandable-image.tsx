@@ -127,9 +127,11 @@ export function ExpandableImage({ image, label, priority = false }: Props) {
   return (
     <>
       <div className="case-media">
-        <Image {...imageProps} alt={image.alt} sizes="(max-width: 800px) calc(100vw - 40px), (max-width: 1440px) 70vw, 960px" quality={90} preload={priority} />
-        <button ref={trigger} type="button" className="case-expand" data-embedded-icon={control ? "true" : undefined} style={controlStyle} onClick={expand} aria-label={`Expand ${label}`} aria-haspopup="dialog">
-          {!control && <Maximize2 size={22} strokeWidth={1.5} aria-hidden="true" />}
+        <button ref={trigger} type="button" className="case-image-trigger" onClick={expand} aria-label={`Expand ${label}`} aria-haspopup="dialog">
+          <Image {...imageProps} alt={image.alt} sizes="(max-width: 800px) calc(100vw - 40px), (max-width: 1440px) 70vw, 960px" quality={90} preload={priority} draggable={false} />
+          <span className="case-expand" data-embedded-icon={control ? "true" : undefined} style={controlStyle} aria-hidden="true">
+            {!control && <Maximize2 size={22} strokeWidth={1.5} />}
+          </span>
         </button>
       </div>
       <dialog

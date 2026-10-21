@@ -101,7 +101,9 @@
 #final-experience > .case-media { margin-top: 28px; }
 
 .case-media { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 14px rgb(0 0 0 / 7%); }
-.case-media > img { display: block; width: 100%; height: auto; }
+.case-image-trigger { display: block; width: 100%; padding: 0; border: 0; border-radius: inherit; background: transparent; cursor: zoom-in; }
+.case-image-trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
+.case-image-trigger > img { display: block; width: 100%; height: auto; }
 .case-expand {
   position: absolute;
   right: 4%;
